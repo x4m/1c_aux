@@ -1,0 +1,1 @@
+select binrowver(x::integer) from generate_series(1,100,7) x;
