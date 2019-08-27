@@ -1,4 +1,4 @@
-Source: yndx-1c-aux
+Source: yndx1caux
 Section: database
 Priority: optional
 Maintainer: Andrey Borodin <x4mmm@yandex-team.ru>
@@ -9,7 +9,7 @@ Build-Depends:
 Standards-Version: 4.1.1
 Homepage: https://github.yandex-team.ru/mdb/yndx_1c_aux
 
-Package: postgresql-PGVERSION-yndx-1c-aux
+Package: postgresql-PGVERSION-yndx1caux
 Architecture: any
 Depends: postgresql-PGVERSION, ${misc:Depends}, ${shlibs:Depends}
 Description: PostgreSQL extension for similarity search.

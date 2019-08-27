@@ -12,7 +12,7 @@ override_dh_auto_test:
 	# nothing to do here, see debian/tests/* instead
 
 override_dh_auto_install:
-	+pg_buildext install build-%v postgresql-%v-yndx-1c-aux
+	+pg_buildext install build-%v postgresql-%v-yndx1caux
 
 override_dh_auto_clean:
 	+pg_buildext clean build-%v
