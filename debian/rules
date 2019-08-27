@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-include /usr/share/postgresql-common/pgxs_debian_control.mk
+#include /usr/share/postgresql-common/pgxs_debian_control.mk
 
 override_dh_auto_configure:
 	# nothing to do here
