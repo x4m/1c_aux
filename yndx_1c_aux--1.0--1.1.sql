@@ -1,13 +1,11 @@
 -- complain if script is sourced in psql, rather than via CREATE EXTENSION
 \echo Use "CREATE EXTENSION yndx_1c_aux" to load this file. \quit
 
-CREATE OR REPLACE FUNCTION datediff(character varying, timestamp without time zone, timestamp without time zone)
+CREATE OR REPLACE FUNCTION datediff(arg_mode character varying,
+                                arg_d2 timestamp without time zone,
+                                arg_d1 timestamp without time zone)
 RETURNS integer AS
 $BODY$
-DECLARE
-arg_mode alias for $1;
-arg_d2 alias for $2;
-arg_d1 alias for $3;
 BEGIN
         if arg_mode = 'SECOND' then
                 return date_part('epoch', arg_d1) - date_part('epoch', arg_d2);
@@ -27,14 +25,9 @@ BEGIN
                         + date_part('quarter', arg_d1) - date_part('quarter', arg_d2);
         elsif arg_mode = 'YEAR' then
                 return (date_part('year', arg_d1) - date_part('year', arg_d2));
+        else
+                RAISE EXCEPTION 'Unsupported datediff() mode';
         end if;
 END
 $BODY$
-LANGUAGE plpgsql VOLATILE
-COST 100;
-
-CREATE OR REPLACE FUNCTION plpgsql_call_handler()
-RETURNS language_handler
-AS '$libdir/plpgsql', 'plpgsql_call_handler'
-LANGUAGE 'c';
-);
+LANGUAGE plpgsql IMMUTABLE;
