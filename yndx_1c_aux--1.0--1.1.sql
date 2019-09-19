@@ -7,7 +7,7 @@ CREATE OR REPLACE FUNCTION datediff(arg_mode character varying,
 RETURNS integer AS
 $BODY$
 DECLARE
-        mode character varying:= upper(arg_mode)
+        mode character varying := upper(arg_mode);
 BEGIN
         if mode = 'SECOND' then
                 return date_part('epoch', arg_d1) - date_part('epoch', arg_d2);
