@@ -19,3 +19,8 @@ Architecture: any
 Depends: postgresql-11, ${misc:Depends}, ${shlibs:Depends}
 Description: PostgreSQL extension for similarity search.
 
+Package: postgresql-12-yndx-1c-aux
+Architecture: any
+Depends: postgresql-12, ${misc:Depends}, ${shlibs:Depends}
+Description: PostgreSQL extension for similarity search.
+
