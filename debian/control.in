@@ -1,12 +1,12 @@
-Source: yndx-1c-aux
+Source: lwaldump
+Maintainer: Andrey Borodin (Yandex.Cloud) <x4mmm@yandex-team.ru> 
 Section: database
 Priority: optional
-Maintainer: Andrey Borodin <x4mmm@yandex-team.ru>
-Build-Depends: debhelper (>= 9), postgresql-server-dev-all (>= 195~), postgresql-server-dev-12
+Build-Depends: debhelper (>= 9), postgresql-server-dev-all (>=195~), postgresql-server-dev-12
 Standards-Version: 4.3.0
-Homepage: https://github.yandex-team.ru/mdb/yndx_1c_aux
+Homepage: https://github.yandex-team.ru/mdb/lwaldump
 
-Package: postgresql-PGVERSION-yndx-1c-aux
+Package: lwaldump-PGVERSION
 Architecture: any
 Depends: postgresql-PGVERSION, ${misc:Depends}, ${shlibs:Depends}
-Description: PostgreSQL extension for similarity search.
+Description: Finds last lsn flushed to disk.
