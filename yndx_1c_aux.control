@@ -1,5 +1,5 @@
 comment = 'Auxilary functions to run 1C ERP system on Yandex.Cloud MDB clusters'
-default_version = '1.1'
+default_version = '1.2'
 module_pathname = '$libdir/yndx_1c_aux'
 relocatable = true
 
