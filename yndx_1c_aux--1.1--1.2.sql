@@ -30,14 +30,16 @@ CREATE FUNCTION state_min_bytea(st bytea, inp bytea) RETURNS bytea
          end if;
     END;$$;
 
-CREATE OR REPLACE AGGREGATE max (
+DROP AGGREGATE IF EXISTS max(bytea);
+CREATE AGGREGATE max (
 	BASETYPE	= 	bytea,
 	SFUNC 		= 	state_max_bytea,
 	STYPE		= 	bytea,
 	SORTOP		= 	'>'
 );
 
-CREATE OR REPLACE AGGREGATE min (
+DROP AGGREGATE IF EXISTS min(bytea);
+CREATE AGGREGATE min (
 	BASETYPE	= 	bytea,
 	SFUNC 		= 	state_min_bytea,
 	STYPE		= 	bytea,
